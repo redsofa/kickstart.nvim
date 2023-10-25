@@ -1,0 +1,132 @@
+VIM
+===
+
+
+CODE FOLDING
+-----------
+Creating fold :
+    Visual Mode
+    zf <-- create fold
+
+zd <-- delete fold
+zo <-- open fold
+zc <-- close fold
+3zf & return <- fold three lines
+:mkview <-- saves folds
+:loadview <-- loads folds
+
+
+
+UNDO & REDO
+-----------
+Undo
+    Normal Mode
+    u
+
+Redo
+    Normal Mode
+    ctrl-r
+
+
+
+PASTE IN EDIT MODE
+------------------
+ctrl-r * will insert in the contents of the clipboard
+ctrl-r " (the unnamed register) inserts the last delete or yank.
+  to find this in vim's help type :h i_ctrl-r
+
+If you don't want Vim to mangle formatting in incoming pasted text, you might
+also want to consider using: :set paste. This will prevent Vim from re-tabbing
+your code. When done pasting, :set nopaste will return to the normal behavior.
+
+
+
+
+PYTHON PYLINT
+-------------
+Normal mode
+:set makeprg=pylint
+:make % <-- run lint on the current file
+
+
+
+SEARCH AND REPLACE IN CURRENT FILE
+----------------------------------
+:%s/foo/bar/gc <-- Change each 'foo' to 'bar', but ask for confirmation first
+
+
+
+FINDING STUFF IN FILES
+----------------------
+:grep __main__ **/*.py <-- look for the text __main__ in all sub-dirs with .py extension
+:cn <-- next in quick fix list
+:cp <-- previous in quick fix list
+:copen <-- open the quick fix window
+:ccl <-- close quick fix list window
+:cc4 <-- go to the 4th entry in the results list
+
+
+
+
+DELETE AND CHANGE
+-----------------
+dt} <-- delete to character "}"
+ct} <-- change to charager "}". delete and drop in insert mode
+
+
+
+NAVIGATION
+----------
+ctrl-u <-- up half a page
+ctrl-d <-- down half a page
+
+
+
+WINDOW SPLITS
+-------------
+:vsplit
+ctrl-w + arrows to navigate between windows
+
+
+
+
+CASE
+----
+~    : Changes the case of current character
+guu  : Change current line from upper to lower.
+gUU  : Change current LINE from lower to upper.
+guw  : Change to end of current WORD from upper to lower.
+guaw : Change all of current WORD to lower.
+gUw  : Change to end of current WORD from lower to upper.
+gUaw : Change all of current WORD to upper.
+g~~  : Invert case to entire line
+g~w  : Invert case to current WORD
+guG  : Change to lowercase until the end of document.
+gU)  : Change until end of sentence to upper case
+gu}  : Change to end of paragraph to lower case
+gU5j : Change 5 lines below to upper case
+gu3k : Change 3 lines above to lower case
+
+
+
+
+
+
+TMUX
+====
+PANES
+-----
+ctrl+b
+    :resize-pane -D 10 <-- Resizes the current pane down by 10 cells
+    :resize-pane -U 10 <-- Resizes the current pane upward by 10 cells
+
+Ctrl + b + % to split the current pane vertically.
+Ctrl + b + " to split the current pane horizontally.
+Ctrl + b + x to close the current pane.
+
+
+SESSION
+-------
+tmux new -s <session_name>
+tmux attatch -t <session_name>
+tmux kill-session -t <session_name>
