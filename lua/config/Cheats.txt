@@ -2,6 +2,26 @@ VIM
 ===
 
 
+
+NORMAL MODE COMMAND IN EDIT MODE
+---------------------------------
+When in edit mode
+ctrl-o
+Type the normal mode command
+Once command executed, you will be put in edit mode again
+
+
+
+COMMMENT MULTIPLE LINES AT ONCE
+-------------------------------
+Ctrl+v -> visual block mode
+j -> move cursor down
+shift + i
+type # (for python language)
+ESC
+
+
+
 CODE FOLDING
 -----------
 Creating fold :
