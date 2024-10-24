@@ -1,6 +1,11 @@
 vim.opt.colorcolumn = '80'
 vim.cmd.colorscheme 'catppuccin-frappe'
 vim.api.nvim_create_user_command('Cheats', 'e ~/.config/nvim/lua/config/Cheats.txt', {})
+
+vim.keymap.set('n', '<leader>gn', ':Gitsigns next_hunk<CR>', {})
+vim.keymap.set('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', {})
+vim.keymap.set('n', '<leader>gv', ':Gitsigns preview_hunk<CR>', {})
+
 --[[
   Source : https://www.reddit.com/r/neovim/comments/zv91wz/range_formatting/  
   Range format any block of code using the built-in format function 
