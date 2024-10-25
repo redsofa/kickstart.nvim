@@ -618,6 +618,25 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        pylsp = {
+          settings = {
+            pylsp = {
+              configurationSources = { 'flake8' },
+              plugins = {
+                flake8 = { enabled = false },
+                black = { enabled = false },
+                autopep8 = { enabled = false },
+                mccabe = { enabled = false },
+                pycodestyle = {
+                  enabled = true,
+                  ignore = { 'W391' },
+                  maxLineLength = 100,
+                },
+                pyflakes = { enabled = false },
+              },
+            },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
