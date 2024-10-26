@@ -624,7 +624,7 @@ require('lazy').setup({
               configurationSources = { 'flake8' },
               plugins = {
                 flake8 = { enabled = false },
-                black = { enabled = false },
+                black = { enabled = true },
                 autopep8 = { enabled = false },
                 mccabe = { enabled = false },
                 pycodestyle = {
